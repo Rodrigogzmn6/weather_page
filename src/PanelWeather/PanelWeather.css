@@ -1,0 +1,51 @@
+@media screen and (min-width: 0px) {
+  #panel-weather .panel-weather-image img {
+    width: 30%;
+  }
+
+  #panel-weather .panel-weather {
+    margin: 1rem 0rem;
+  }
+
+  #panel-weather .panel-weather-info h1 {
+    font-size: 5rem;
+  }
+
+  #panel-weather .panel-weather-info h2 {
+    font-size: 2.5rem;
+  }
+
+  #panel-weather .panel-weather-date {
+    color: #88869d;
+    margin: 1rem 0rem;
+  }
+
+  #panel-weather .panel-weather-location {
+    color: #88869d;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  #panel-weather .panel-weather-location p {
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #panel-weather {
+  }
+
+  #panel-weather .panel-weather-image img {
+    width: 50%;
+  }
+
+  #panel-weather .panel-weather-info h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #panel-weather .panel-weather-info h2 {
+    font-size: 1rem;
+  }
+}
