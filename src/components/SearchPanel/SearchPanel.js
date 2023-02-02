@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './SearchContainer.css'
+import './SearchPanel.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 
-function SearchContainer({ close, search }) {
+function SearchPanel({ close, search }) {
   const [location, setLocation] = useState('')
 
   function handleChange(event) {
@@ -15,15 +15,15 @@ function SearchContainer({ close, search }) {
   }
 
   return (
-    <div id="search-container">
-      <div className="search-container-close">
+    <div id="search-panel">
+      <div className="search-panel-close">
         <button onClick={() => close(false)}>
           <CloseRoundedIcon />
         </button>
       </div>
-      <div className="search-container-form">
+      <div className="search-panel-form">
         <input
-          className="search-container-textfield"
+          className="search-panel-textfield"
           placeholder="Search location"
           onChange={handleChange}
           value={location}
@@ -39,4 +39,4 @@ function SearchContainer({ close, search }) {
     </div>
   )
 }
-export default SearchContainer
+export default SearchPanel

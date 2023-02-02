@@ -1,0 +1,15 @@
+@media screen and (min-width: 0px) {
+  #panel-container {
+    background-color: #1e213a;
+    color: #e7e7eb;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #panel-container {
+    display: flex;
+    justify-items: stretch;
+    width: 25%;
+  }
+}

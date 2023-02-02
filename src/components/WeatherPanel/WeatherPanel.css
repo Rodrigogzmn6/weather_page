@@ -1,0 +1,68 @@
+@media screen and (min-width: 0px) {
+  #weather-panel {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #weather-panel .weather-panel-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #weather-panel .weather-panel-buttons button {
+    align-items: center;
+    background-color: #1e213a;
+    color: #e7e7eb;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.2rem;
+  }
+
+  #weather-panel .weather-panel-temperature {
+    margin-bottom: 2rem;
+  }
+
+  #weather-panel .weather-panel-temperature h1 {
+    font-size: 4.5rem;
+  }
+
+  #weather-panel .weather-panel-temperature h2 {
+    font-size: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  #weather-panel .weather-panel-date,
+  #weather-panel .weather-panel-location {
+    color: #88869d;
+  }
+
+  #weather-panel .weather-panel-location {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+
+  #weather-panel .weather-panel-location p {
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #weather-panel {
+    width: 100%;
+  }
+
+  #weather-panel .weather-panel-buttons button {
+    font-size: 1rem;
+  }
+
+  #weather-panel .weather-panel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+  }
+}

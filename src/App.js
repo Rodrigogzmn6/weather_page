@@ -1,11 +1,13 @@
 import './App.css'
-import PanelContainer from './PanelContainer/PanelContainer'
+import { WeatherContextProvider } from './contexts/WeatherContext'
+import PanelContainer from './components/PanelContainer/PanelContainer'
 
 function App() {
   return (
     <div className="App">
-      <PanelContainer />
-      <div>asd</div>
+      <WeatherContextProvider value={[]}>
+        <PanelContainer />
+      </WeatherContextProvider>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-@media screen and (min-width: 0px) {
+/* @media screen and (min-width: 0px) {
   #search-container {
     background-color: #1e213a;
     color: #e7e7eb;
@@ -57,5 +57,63 @@
 @media screen and (min-width: 1440px) {
   #search-container .search-container-form button {
     margin-left: 1rem;
+  }
+} */
+
+@media screen and (min-width: 0px) {
+  #search-panel .search-panel-close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #search-panel .search-panel-close button {
+    background-color: #1e213a;
+    color: #e7e7eb;
+  }
+
+  #search-panel .search-panel-form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  #search-panel .search-panel-form * {
+    border: 1px solid #e7e7eb;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #search-panel .search-panel-form input {
+    background-color: #1e213a;
+    color: #e7e7eb;
+  }
+
+  #search-panel .search-panel-form button {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #search-panel {
+    width: 100%;
+  }
+  #search-panel .search-panel-form {
+    display: block;
+    text-align: center;
+  }
+
+  #search-panel .search-panel-form button {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #search-panel .search-panel-form button {
+    margin-left: 1rem;
+  }
+
+  #search-panel .search-panel-form * {
+    padding: 1rem 2rem;
   }
 }
