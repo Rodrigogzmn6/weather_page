@@ -6,6 +6,7 @@ function WeatherContextProvider({ children }) {
   const apiKey = process.env.REACT_APP_API_KEY
   const [weatherData, setWeatherData] = useState({})
   const [forecastWeatherData, setForecastWeatherData] = useState({})
+  const [unit, setUnit] = useState('metric')
   const days = [
     'Sunday',
     'Monday',
@@ -31,6 +32,7 @@ function WeatherContextProvider({ children }) {
   ]
 
   function getWeatherDataByLocation() {
+    setUnit('metric')
     navigator.geolocation.getCurrentPosition((position) => {
       let location = position.coords
       fetch(
@@ -46,14 +48,15 @@ function WeatherContextProvider({ children }) {
     })
   }
 
-  function getWeatherDataByName(location) {
+  function getWeatherDataByName(location, unit) {
+    setUnit(unit)
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${unit}`,
     )
       .then((response) => response.json())
       .then((data) => setWeatherData(data))
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`,
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=${unit}`,
     )
       .then((response) => response.json())
       .then((data) => setForecastWeatherData(data))
@@ -97,6 +100,7 @@ function WeatherContextProvider({ children }) {
   return (
     <WeatherContext.Provider
       value={{
+        unit,
         weatherData,
         forecastWeatherData,
         getWeatherDataByLocation,

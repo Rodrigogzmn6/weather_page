@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './WeatherPanel.css'
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded'
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded'
 import PanelLoader from '../PanelLoader/PanelLoader'
+import { WeatherContext } from '../../contexts/WeatherContext'
 
 function WeatherPanel({ data, startSearchButton, currentLocation }) {
+  const { unit } = useContext(WeatherContext)
   return Object.keys(data).length !== 0 ? (
     <div id="weather-panel">
       <div className="weather-panel-buttons">
@@ -21,7 +23,10 @@ function WeatherPanel({ data, startSearchButton, currentLocation }) {
           />
         </div>
         <div className="weather-panel-temperature">
-          <h1>{data.temperature}℃</h1>
+          <h1>
+            {data.temperature}
+            {unit === 'metric' ? '℃' : '℉'}
+          </h1>
           <h2>{data.description}</h2>
         </div>
         <div className="weather-panel-date">

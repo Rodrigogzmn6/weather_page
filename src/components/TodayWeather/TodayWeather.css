@@ -24,3 +24,25 @@
     justify-content: flex-end;
   }
 }
+
+@media screen and (min-width: 768px) {
+  #today-weather {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #today-weather {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #today-weather {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 5rem;
+  }
+}

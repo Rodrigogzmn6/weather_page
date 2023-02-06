@@ -62,7 +62,7 @@
   #weather-panel .weather-panel-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-grow: 2;
+    margin-top: 3rem;
   }
 }

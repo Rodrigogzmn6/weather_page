@@ -9,6 +9,7 @@ function ForecastContainer() {
     weatherData,
     forecastWeatherData,
     formatForecastWeatherData,
+    getWeatherDataByName,
   } = useContext(WeatherContext)
   const [activeUnit, setActiveUnit] = useState('C')
 
@@ -16,12 +17,12 @@ function ForecastContainer() {
 
   function handleCUnitClick() {
     setActiveUnit('C')
-    console.log(activeUnit)
+    getWeatherDataByName(forecastWeatherData.city.name, 'metric')
   }
 
   function handleFUnitClick() {
     setActiveUnit('F')
-    console.log(activeUnit)
+    getWeatherDataByName(forecastWeatherData.city.name, 'imperial')
   }
 
   return (
@@ -42,10 +43,10 @@ function ForecastContainer() {
       </div>
       <div className="forecast-container-days">
         {Object.keys(forecastWeatherData).length > 0 &&
-          forecastWeatherData.list.map((day) => {
+          forecastWeatherData.list.map((day, index) => {
             return (
               day.dt_txt.substring(11, 13) === '00' && (
-                <ForecastDay day={formatForecastWeatherData(day)} />
+                <ForecastDay key={index} day={formatForecastWeatherData(day)} />
               )
             )
           })}

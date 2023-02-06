@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './SearchPanel.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
+import { WeatherContext } from '../../contexts/WeatherContext'
 
 function SearchPanel({ close, search }) {
   const [location, setLocation] = useState('')
+  const { unit } = useContext(WeatherContext)
 
   function handleChange(event) {
     setLocation(event.target.value)
   }
 
   function handleClick() {
-    search(location)
+    search(location, unit)
     close(false)
   }
 

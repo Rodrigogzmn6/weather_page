@@ -41,3 +41,21 @@
     margin-top: 2rem;
   }
 }
+
+@media screen and (min-width: 768px) {
+  #forecast-container {
+    width: 100%;
+  }
+
+  #forecast-container .forecast-container-days {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #forecast-container .forecast-container-days {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+  }
+}
