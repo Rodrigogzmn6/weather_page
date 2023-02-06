@@ -1,0 +1,43 @@
+@media screen and (min-width: 0px) {
+  #forecast-container {
+    background-color: #100e1d;
+    color: #e7e7eb;
+    padding: 1rem 2rem;
+  }
+
+  #forecast-container .forecast-container-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #forecast-container .forecast-container-buttons button {
+    border-radius: 150%;
+    font-size: 1.25rem;
+    height: 30px;
+    margin-left: 1rem;
+    padding: 0.2rem;
+    width: 30px;
+  }
+
+  .active {
+    background-color: #e7e7eb;
+    color: #110e3c;
+  }
+
+  .inactive {
+    background-color: #100e1d;
+    color: #e7e7eb;
+  }
+
+  #forecast-container .forecast-container-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0rem;
+  }
+
+  #forecast-container > h2 {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,26 @@
+@media screen and (min-width: 0px) {
+  #today-weather {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: 1rem;
+  }
+
+  #today-weather .progress-bar {
+    align-items: center;
+    display: flex;
+    height: 10px;
+    width: 100%;
+    background-color: #e7e7eb;
+    border-radius: 50px;
+  }
+
+  #today-weather .completed-bar {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    background-color: #ec6e4c;
+    border-radius: inherit;
+    justify-content: flex-end;
+  }
+}

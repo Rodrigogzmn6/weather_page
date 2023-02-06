@@ -1,3 +1,9 @@
+#panel-loader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 #panel-loader .lds-ellipsis {
   display: inline-block;
   position: relative;

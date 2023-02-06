@@ -1,0 +1,26 @@
+@media screen and (min-width: 0px) {
+  #forecast-day {
+    align-items: center;
+    background-color: #1e213a;
+    border-radius: 10%;
+    color: #e7e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+
+  #forecast-day h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  #forecast-day .forecast-day-temperature {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #forecast-day .forecast-day-temperature p:nth-child(2) {
+    color: #a09fb1;
+    margin-left: 1rem;
+  }
+}
