@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const WeatherContext = React.createContext([])
 
 function WeatherContextProvider({ children }) {
-  const apiKey = process.env.REACT_APP_API_KEY
   const [weatherData, setWeatherData] = useState({})
   const [forecastWeatherData, setForecastWeatherData] = useState({})
   const [unit, setUnit] = useState('metric')
@@ -36,12 +35,12 @@ function WeatherContextProvider({ children }) {
     navigator.geolocation.getCurrentPosition((position) => {
       let location = position.coords
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${apiKey}&units=metric`,
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=d1006ab6bd1d9b78629d448b5858a92f&units=metric`,
       )
         .then((response) => response.json())
         .then((data) => setWeatherData(data))
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${apiKey}&units=metric`,
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&appid=d1006ab6bd1d9b78629d448b5858a92f&units=metric`,
       )
         .then((response) => response.json())
         .then((data) => setForecastWeatherData(data))
@@ -51,12 +50,12 @@ function WeatherContextProvider({ children }) {
   function getWeatherDataByName(location, unit) {
     setUnit(unit)
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${unit}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=d1006ab6bd1d9b78629d448b5858a92f&units=${unit}`,
     )
       .then((response) => response.json())
       .then((data) => setWeatherData(data))
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=${unit}`,
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=d1006ab6bd1d9b78629d448b5858a92f&units=${unit}`,
     )
       .then((response) => response.json())
       .then((data) => setForecastWeatherData(data))
