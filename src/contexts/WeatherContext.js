@@ -31,6 +31,8 @@ function WeatherContextProvider({ children }) {
   ]
 
   function getWeatherDataByLocation() {
+    setWeatherData({})
+    setForecastWeatherData({})
     setUnit('metric')
     navigator.geolocation.getCurrentPosition((position) => {
       let location = position.coords
@@ -48,6 +50,8 @@ function WeatherContextProvider({ children }) {
   }
 
   function getWeatherDataByName(location, unit) {
+    setWeatherData({})
+    setForecastWeatherData({})
     setUnit(unit)
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=d1006ab6bd1d9b78629d448b5858a92f&units=${unit}`,
